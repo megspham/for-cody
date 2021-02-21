@@ -1,0 +1,31 @@
+
+# NAME: Megan Pham
+# EMAIL: megspham@ucla.edu
+# ID: 505 313 300 
+
+
+Project 3A - File System Interpretation
+CS 111 Winter 2021 - Xu
+
+In this project, we will design and implement a program that will read, analyze, and summarize
+the contents of an on-disk representation of a file system.
+    -Primary: reinforce the basic file system concepts of directory objects, file objects, and free space.
+    -Primary: reinforce the implemenation descriptions provided in the text and lectures.
+    -Primary: gain experience researching, examining, interpreting and processing information 
+    in complex binary data structures.
+    -Primary: gain experience with examining interpreted and raw hex dumps of complex data 
+    structures as a means of developing an understanding of those data structures.
+    -Secondary: gain practical experience with typical on-disk file system data formats.
+
+Deliverables:
+lab3a.c which has the source code of our program
+ext2_fs.h which is the header file given 
+Makefile to build the program and the tarbell (utilizes default, dist, and clean)
+README
+
+
+
+//for megan to delete later
+TO MOUNT IMAGE ON MAC:
+hdiutil attach -readonly -nomount ./EXT2_test.img
+output: /dev/disk2    
