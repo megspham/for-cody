@@ -1,6 +1,6 @@
-# NAME: Megan Pham
-# EMAIL: megspham@ucla.edu
-# ID: 505 313 300 
+# NAME: Megan Pham, Cody Do
+# EMAIL: megspham@ucla.edu, D.Codyx@gmail.com
+# ID: 505313300, 105140467
 
 OPTIMIZE = -O2
 
@@ -14,7 +14,4 @@ dist:
 	tar -czf lab3a-505313300.tar.gz lab3a.c README Makefile ext2_fs.h
 
 clean: 
-	rm -f lab3a lab3a-505313300.tar.gz 
-
-
-
+	rm -f lab3a *.tar.gz 

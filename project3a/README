@@ -1,8 +1,6 @@
-
-# NAME: Megan Pham
-# EMAIL: megspham@ucla.edu
-# ID: 505 313 300 
-
+NAME: Megan Pham, Cody Do
+EMAIL: megspham@ucla.edu, D.Codyx@gmail.com
+ID: 505313300, 105140467
 
 Project 3A - File System Interpretation
 CS 111 Winter 2021 - Xu
@@ -18,14 +16,14 @@ the contents of an on-disk representation of a file system.
     -Secondary: gain practical experience with typical on-disk file system data formats.
 
 Deliverables:
-lab3a.c which has the source code of our program
-ext2_fs.h which is the header file given 
-Makefile to build the program and the tarbell (utilizes default, dist, and clean)
-README
+    lab3a.c: Contains the source code for our program
+    ext2_fs.h: The header file given in the project
+    Makefile: Builds lab3a executable and supports 3 targets:
+        default: Runs gcc to create a lab3a executable
+        clean: Deletes all files created from Makefile 
+        dist: Produces the tarbell for submission
+    README: Information on the project
 
-
-
-//for megan to delete later
-TO MOUNT IMAGE ON MAC:
-hdiutil attach -readonly -nomount ./EXT2_test.img
-output: /dev/disk2    
+References:
+    https://linux.die.net/man/3/gmtime: Read to understand gmtime
+    https://man7.org/linux/man-pages/man3/strftime.3.html: Read to understand strftime
