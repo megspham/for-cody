@@ -160,8 +160,7 @@ void processCommands(char *input)
     {
         if (logopt)
             fprintf(logfd, "%s\n", input);
-        else
-            else{
+        else{
             char temp [20]= "no log file";
             dprintf(sockfd, "%s\n", temp);
         }
