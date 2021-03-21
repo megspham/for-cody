@@ -112,10 +112,10 @@ void getTime()
     min = local->tm_min;
     hour = local->tm_hour;
     char str[256];
-    sprintf(str, "%02d:%02d:%02d %.1f", hour, min, sec, getTemperature());
+    sprintf(str, "%02d:%02d:%02d %.1f\n", hour, min, sec, getTemperature());
     if (logopt)
     {
-        fprintf(logfd, "%s\n", str);
+        fprintf(logfd, "%s", str);
         fflush(logfd);
     }
     SSL_write(ssl_client, str, strlen(str));
@@ -135,14 +135,17 @@ void shut_down()
     hour = local->tm_hour;
     char temp[128];
 
-    sprintf(temp, "%02d:%02d:%02d SHUTDOWN", hour, min, sec);
+    sprintf(temp, "%02d:%02d:%02d SHUTDOWN\n", hour, min, sec);
     if (logopt)
     {
-        fprintf(logfd, "%s\n", temp);
+        fprintf(logfd, "%s", temp);
         fflush(logfd);
         fclose(logfd);
     }
     SSL_write(ssl_client, temp, strlen(temp));
+
+    ssl_clean_client(ssl_client);
+
     mraa_aio_close(tempSensor);
     mraa_gpio_close(button);
     exit(0);
@@ -273,7 +276,7 @@ int main(int argc, char **argv)
     mraa_gpio_dir(button, MRAA_GPIO_IN);
     mraa_gpio_isr(button, MRAA_GPIO_EDGE_RISING, &shut_down, NULL);
 
-    struct pollfd pollStdin = {ssl_client, POLLIN, 0};
+    struct pollfd pollStdin = {sockfd, POLLIN, 0};
 
     int ret = 0;
     int r = 0; 
@@ -324,7 +327,7 @@ int main(int argc, char **argv)
             }
         }
 
-        //IF THERE ARE INPUT FROM SOCKET
+       
     }
 
     ssl_clean_client(ssl_client);
