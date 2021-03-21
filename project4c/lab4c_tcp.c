@@ -161,7 +161,10 @@ void processCommands(char *input)
         if (logopt)
             fprintf(logfd, "%s\n", input);
         else
-            dprintf(sockfd, "no log file\n");
+            else{
+            char temp [20]= "no log file";
+            dprintf(sockfd, "%s\n", temp);
+        }
     }
     else if (strcmp(input, "OFF") == 0)
     {
@@ -303,3 +306,4 @@ int main(int argc, char **argv)
 
     return (0);
 }
+
